@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Álvaro Linares Cabré — Cloud &amp; DevOps Engineer and Kubernetes instructor</title>
-<meta name="description" content="Cloud &amp; DevOps Engineer based in Madrid. Thirty years of infrastructure, from server hardware to Kubernetes. CKA, CKAD and CKS certification instructor.">
+<meta name="description" content="Cloud &amp; DevOps Engineer based in Madrid. Thirty years of infrastructure, from server hardware to Kubernetes. Kubestronaut — all five CNCF Kubernetes certifications.">
 <meta name="author" content="Álvaro Linares Cabré">
 <link rel="canonical" href="https://alvarolinarescabre.github.io/">
 <link rel="alternate" hreflang="en" href="https://alvarolinarescabre.github.io/">
@@ -17,12 +17,12 @@
 <meta property="og:site_name" content="Álvaro Linares">
 <meta property="og:url" content="https://alvarolinarescabre.github.io/">
 <meta property="og:title" content="Álvaro Linares Cabré — Cloud &amp; DevOps Engineer and Kubernetes instructor">
-<meta property="og:description" content="Thirty years of infrastructure, from server hardware to Kubernetes. CKA · CKAD · CKS instructor.">
+<meta property="og:description" content="Thirty years of infrastructure, from server hardware to Kubernetes. Kubestronaut · CKA · CKAD · CKS · KCNA · KCSA.">
 <meta property="og:image" content="https://alvarolinarescabre.github.io/avatar.jpg">
 <meta property="og:image:alt" content="Portrait of Álvaro Linares Cabré">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Álvaro Linares Cabré — Cloud &amp; DevOps Engineer">
-<meta name="twitter:description" content="Thirty years of infrastructure. CKA · CKAD · CKS instructor.">
+<meta name="twitter:description" content="Thirty years of infrastructure. Kubestronaut · CKA · CKAD · CKS · KCNA · KCSA.">
 <meta name="twitter:image" content="https://alvarolinarescabre.github.io/avatar.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2307080B'/%3E%3Crect x='4' y='14.5' width='24' height='3' fill='%23FF5B2E'/%3E%3C/svg%3E">
 <link rel="preload" as="image" href="avatar.jpg">
@@ -205,8 +205,15 @@ h2{margin:0;font-family:var(--mono);font-weight:500;letter-spacing:-.04em;line-h
 @media(max-width:620px){.piece{grid-template-columns:auto minmax(0,1fr)}.piece-s{display:none}}
 
 /* ---------- certs ---------- */
+.kube{
+  display:block;margin-top:clamp(28px,4vw,44px);padding:18px 20px;
+  border:1px solid var(--line);background:var(--surface);transition:border-color .2s,background .2s;
+}
+.kube:hover{border-color:var(--acc);background:var(--raise)}
+.kube b{display:block;font-family:var(--mono);font-size:15px;font-weight:500;color:var(--acc);letter-spacing:-.02em}
+.kube span{display:block;margin-top:5px;font-size:14px;color:var(--dim);line-height:1.45}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1px;
-  background:var(--line);border:1px solid var(--line);margin-top:clamp(28px,4vw,44px)}
+  background:var(--line);border:1px solid var(--line);border-top:none;margin-top:0}
 .cell{background:var(--ink);padding:20px}
 .cell b{display:block;font-family:var(--mono);font-size:14px;color:var(--acc);font-weight:500;letter-spacing:-.01em}
 .cell span{display:block;margin-top:5px;font-size:14px;color:var(--dim);line-height:1.4}
@@ -260,7 +267,7 @@ footer a:hover{color:var(--acc)}
 
     <h1 class="up d3"><span>Álvaro</span><span>Linares</span><span>Cabré<em>.</em></span></h1>
 
-    <p class="role up d4">Cloud &amp; DevOps Engineer <b>/</b> Kubernetes Instructor <b>(CKA · CKAD · CKS)</b></p>
+    <p class="role up d4">Cloud &amp; DevOps Engineer <b>/</b> Kubestronaut <b>/</b> Kubernetes Instructor</p>
 
     <div class="hero-line up d4">
       <div class="link-line"><span class="pulse" aria-hidden="true"></span></div>
@@ -400,15 +407,14 @@ footer a:hover{color:var(--acc)}
   <section class="s" id="certs">
     <p class="lab rv">Certifications</p>
     <h2 class="rv" style="--i:1">What is verified.</h2>
-    <div class="grid">
-      <div class="cell rv" style="--i:2"><b>AWS SAP</b><span>Solutions Architect – Professional</span></div>
-      <div class="cell rv" style="--i:3"><b>CKA</b><span>Certified Kubernetes Administrator</span></div>
-      <div class="cell rv" style="--i:4"><b>CKAD</b><span>Certified Kubernetes Application Developer</span></div>
-      <div class="cell rv" style="--i:5"><b>Terraform</b><span>HashiCorp Certified Associate</span></div>
-      <div class="cell rv" style="--i:6"><b>GCP ACE</b><span>Associate Cloud Engineer</span></div>
-      <div class="cell rv" style="--i:7"><b>CCNA</b><span>Cisco Certified Network Associate</span></div>
-      <div class="cell rv" style="--i:8"><b>SUSE CLE</b><span>Certified Linux Engineer</span></div>
-      <div class="cell rv" style="--i:9"><b>PCEP</b><span>Entry-Level Python Programmer</span></div>
+    <a class="kube rv" style="--i:2" href="https://www.cncf.io/training/kubestronaut/?_sft_lf-country=es&amp;p=alvaro-chamo-linares-cabre-2&amp;_sf_s=alvaro+chamo+linares+cabre+2" rel="noopener"><b>Kubestronaut ↗</b><span>All five CNCF Kubernetes certifications: CKA · CKAD · CKS · KCNA · KCSA</span></a>
+      <div class="grid">
+      <div class="cell rv" style="--i:3"><b>AWS SAP</b><span>Solutions Architect – Professional</span></div>
+      <div class="cell rv" style="--i:4"><b>Terraform</b><span>HashiCorp Certified Associate</span></div>
+      <div class="cell rv" style="--i:5"><b>GCP ACE</b><span>Associate Cloud Engineer</span></div>
+      <div class="cell rv" style="--i:6"><b>CCNA</b><span>Cisco Certified Network Associate</span></div>
+      <div class="cell rv" style="--i:7"><b>SUSE CLE</b><span>Certified Linux Engineer</span></div>
+      <div class="cell rv" style="--i:8"><b>PCEP</b><span>Entry-Level Python Programmer</span></div>
     </div>
     <p class="fine rv" style="--i:10"><a href="https://www.linkedin.com/in/alvaro-linares-cabre/details/certifications/" rel="noopener" style="color:var(--acc)">Full verified list on LinkedIn →</a></p>
   </section>
