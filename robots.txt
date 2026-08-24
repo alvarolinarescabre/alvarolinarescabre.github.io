@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alvarolinarescabre.github.io/sitemap.xml
