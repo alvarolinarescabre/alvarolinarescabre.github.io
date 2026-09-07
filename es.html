@@ -25,7 +25,7 @@
 <meta name="twitter:title" content="Álvaro Linares Cabré — Cloud &amp; DevOps Engineer · instructor de Kubernetes">
 <meta name="twitter:description" content="Treinta años de infraestructura. Kubestronaut · CKA · CKAD · CKS · KCNA · KCSA.">
 <meta name="twitter:image" content="https://alvarolinarescabre.github.io/og.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2307080B'/%3E%3Crect x='4' y='14.5' width='24' height='3' fill='%23FF5B2E'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2307080B'/%3E%3Crect x='4' y='14.5' width='24' height='3' fill='%232EC5D3'/%3E%3C/svg%3E">
 <link rel="preload" as="image" href="avatar.jpg">
 
 <style>
@@ -36,7 +36,7 @@
   --ink:#07080B; --panel:#0D0F14; --raise:#12151C;
   --line:#1B1F28; --hair:#141821;
   --fg:#F2F4F7; --white:#FFF; --dim:#79818F; --faint:#4E5663;
-  --acc:#FF5B2E; --acc-soft:#FF8B66; --live:#2BE08A;
+  --acc:#2EC5D3; --acc-soft:#7FE3EC; --on-acc:#07080B; --live:#2BE08A;
   --mono:PM,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --pad:clamp(20px,5vw,72px); --max:1240px;
@@ -45,7 +45,7 @@ html[data-t="light"]{
   --ink:#FAFAF8; --panel:#F1F1ED; --raise:#EAEAE5;
   --line:#DCDCD5; --hair:#E6E6E0;
   --fg:#12141A; --white:#000; --dim:#5A6069; --faint:#8B9099;
-  --acc:#E0431A; --acc-soft:#B8360F;
+  --acc:#0B6E7A; --acc-soft:#095862; --on-acc:#FFFFFF;
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -118,14 +118,24 @@ html[data-t=light] .i-s{display:none}html:not([data-t=light]) .i-m{display:none}
 @media(max-width:940px){.nl{display:none}.lang{margin-left:auto}}
 
 /* ---------- hero ---------- */
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:96px 0 40px;position:relative}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:96px 0 40px;position:relative;isolation:isolate}
+.hero::before{
+  content:"";position:absolute;z-index:-1;pointer-events:none;
+  inset:-58px calc(var(--pad) * -1) 0;
+  background:
+    radial-gradient(58% 74% at 88% 10%, color-mix(in srgb,var(--acc) 15%,transparent) 0%, transparent 62%),
+    repeating-linear-gradient(to right,  var(--hair) 0 1px, transparent 1px 44px),
+    repeating-linear-gradient(to bottom, var(--hair) 0 1px, transparent 1px 44px);
+  -webkit-mask-image:linear-gradient(to bottom,#000 58%,transparent 96%);
+  mask-image:linear-gradient(to bottom,#000 58%,transparent 96%);
+}
 .tagline{display:flex;flex-wrap:wrap;align-items:center;gap:14px;font-family:var(--mono);font-size:12px;
   letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:clamp(22px,4vw,42px)}
 .led{width:7px;height:7px;border-radius:50%;background:var(--live);animation:blink 2.4s ease-in-out infinite}
 .tagline b{color:var(--dim);font-weight:400}
 .face{
   width:clamp(70px,7.4vw,88px);height:clamp(70px,7.4vw,88px);border-radius:50%;
-  margin:0 0 clamp(20px,3vw,30px);box-shadow:0 0 0 1px var(--line),0 0 0 5px color-mix(in srgb,var(--acc) 12%,transparent);
+  margin:0 0 clamp(20px,3vw,30px);box-shadow:0 0 0 1px color-mix(in srgb,var(--acc) 55%,transparent),0 0 0 6px color-mix(in srgb,var(--acc) 14%,transparent);
 }
 h1{
   margin:0;font-family:var(--mono);font-weight:500;
@@ -146,8 +156,8 @@ h1 em{font-style:normal;color:var(--acc)}
   transition:border-color .2s,background .2s,color .2s}
 .b:hover{border-color:var(--acc);color:var(--acc)}
 .b svg{width:15px;height:15px}
-.b-fill{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:500}
-.b-fill:hover{background:var(--acc-soft);border-color:var(--acc-soft);color:#fff}
+.b-fill{background:var(--acc);border-color:var(--acc);color:var(--on-acc);font-weight:500}
+.b-fill:hover{background:var(--acc-soft);border-color:var(--acc-soft);color:var(--on-acc)}
 html[data-t=light] .b-fill,html[data-t=light] .b-fill:hover{color:#fff}
 .cue{display:block;margin-top:clamp(30px,5vh,62px);font-family:var(--mono);font-size:11px;
   letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
